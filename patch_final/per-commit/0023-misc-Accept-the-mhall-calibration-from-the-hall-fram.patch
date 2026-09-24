@@ -1,7 +1,7 @@
 From 63c3789f1adc7aff72f15f7be2c0559b07f08207 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 09:41:05 +0800
-Subject: [PATCH 23/70] misc: Accept the mhall calibration from the hall
+Subject: [PATCH 23/71] misc: Accept the mhall calibration from the hall
  framework
 
 The hall framework persists a 48 byte calibration blob (cali_mhall_final) and

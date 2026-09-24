@@ -1,7 +1,7 @@
 From dc26d7a54096a8693bb8a84cc6c824fafad5549a Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Fri, 18 Sep 2026 18:01:42 +0800
-Subject: [PATCH 46/70] ASoC: aw882xx: Start the amplifier when the ROM ships
+Subject: [PATCH 46/71] ASoC: aw882xx: Start the amplifier when the ROM ships
  no acf profile
 
 This ROM has no acf file at all: /vendor/firmware only carries the older AWINIC

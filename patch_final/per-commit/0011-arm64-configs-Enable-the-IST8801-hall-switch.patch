@@ -1,7 +1,7 @@
 From 9eb72677a5cf83556df2e3df43b5f1fa656ac276 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 21:50:02 +0800
-Subject: [PATCH 11/70] arm64: configs: Enable the IST8801 hall switch
+Subject: [PATCH 11/71] arm64: configs: Enable the IST8801 hall switch
 
 CONFIG_INPUT_IST8801=y, matching the factory kernel configuration.
 

@@ -1,7 +1,7 @@
 From 0de37575616b2fa8067fda9c035779a96e2f7cd1 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <2549812261@qq.com>
 Date: Sun, 13 Sep 2026 22:38:53 +0800
-Subject: [PATCH 41/70] Update Linux version banner to include author
+Subject: [PATCH 41/71] Update Linux version banner to include author
 
 ---
  init/version.c | 7 ++-----

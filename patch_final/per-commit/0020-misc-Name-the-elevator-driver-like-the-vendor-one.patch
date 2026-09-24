@@ -1,7 +1,7 @@
 From f795c0fcc9475bd8acbd0752e038308e7346a5b8 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 23:33:55 +0800
-Subject: [PATCH 20/70] misc: Name the elevator driver like the vendor one
+Subject: [PATCH 20/71] misc: Name the elevator driver like the vendor one
 
 Two naming details of the factory driver were missed and are part of the
 interface userspace sees:

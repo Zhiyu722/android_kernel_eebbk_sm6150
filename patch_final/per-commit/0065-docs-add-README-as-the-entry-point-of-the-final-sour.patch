@@ -1,7 +1,7 @@
 From 47a35b88b88da28a4da5acd8dfdef43f5137a7ad Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 16:17:57 +0800
-Subject: [PATCH 65/70] docs: add README as the entry point of the final source
+Subject: [PATCH 65/71] docs: add README as the entry point of the final source
  tree
 
 Indexes what is in the repository (our additions vs the vendor baseline), how

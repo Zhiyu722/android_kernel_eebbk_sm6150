@@ -1,7 +1,7 @@
 From 83639f69c874b65b250a01ce044422da63cead3e Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 10:45:47 +0800
-Subject: [PATCH 29/70] media: cam_eeprom: Read the memory map the way the
+Subject: [PATCH 29/71] media: cam_eeprom: Read the memory map the way the
  factory device tree names it
 
 The front camera never reached the camera provider: only the rear one is

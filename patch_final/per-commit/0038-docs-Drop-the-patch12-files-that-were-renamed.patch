@@ -1,7 +1,7 @@
 From fb35ceb1a39c95747e2ec0fce8bd2a3b83de0708 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 12:48:00 +0800
-Subject: [PATCH 38/70] docs: Drop the patch12 files that were renamed
+Subject: [PATCH 38/71] docs: Drop the patch12 files that were renamed
 
 The renamed copies are already in the tree; removing the stale ones keeps the
 patch series consistent.

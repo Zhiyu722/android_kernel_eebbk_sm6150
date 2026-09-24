@@ -1,6 +1,6 @@
 diff --git a/arch/arm64/configs/h130_debug.config b/arch/arm64/configs/h130_debug.config
 new file mode 100644
-index 000000000..2cef9e856
+index 000000000..659e65d30
 --- /dev/null
 +++ b/arch/arm64/configs/h130_debug.config
 @@ -0,0 +1,6047 @@
@@ -5498,7 +5498,7 @@ index 000000000..2cef9e856
 +# CONFIG_READABLE_ASM is not set
 +# CONFIG_UNUSED_SYMBOLS is not set
 +# CONFIG_PAGE_OWNER is not set
-+# CONFIG_DEBUG_FS is not set
++CONFIG_DEBUG_FS=y
 +# CONFIG_HEADERS_CHECK is not set
 +# CONFIG_DEBUG_SECTION_MISMATCH is not set
 +CONFIG_SECTION_MISMATCH_WARN_ONLY=y
@@ -6106,7 +6106,7 @@ index db98a2aff..9d80e254d 100755
  # CONFIG_PANIC_ON_SCHED_BUG is not set
 diff --git a/arch/arm64/configs/h130_release.config b/arch/arm64/configs/h130_release.config
 new file mode 100644
-index 000000000..b30ba9a98
+index 000000000..60263fd18
 --- /dev/null
 +++ b/arch/arm64/configs/h130_release.config
 @@ -0,0 +1,6047 @@
@@ -11604,7 +11604,7 @@ index 000000000..b30ba9a98
 +# CONFIG_READABLE_ASM is not set
 +# CONFIG_UNUSED_SYMBOLS is not set
 +# CONFIG_PAGE_OWNER is not set
-+# CONFIG_DEBUG_FS is not set
++CONFIG_DEBUG_FS=y
 +# CONFIG_HEADERS_CHECK is not set
 +# CONFIG_DEBUG_SECTION_MISMATCH is not set
 +CONFIG_SECTION_MISMATCH_WARN_ONLY=y

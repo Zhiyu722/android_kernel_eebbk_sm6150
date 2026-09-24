@@ -1,7 +1,7 @@
 From adf179dadcd030248a10fee029b8e22fd94f4da3 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 21:50:03 +0800
-Subject: [PATCH 12/70] arm64: configs: Disable the vendor debug
+Subject: [PATCH 12/71] arm64: configs: Disable the vendor debug
  panic-on-timeout switches
 
 The factory config leaves several debug switches enabled:

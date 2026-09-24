@@ -1,7 +1,7 @@
 From fb705bbaa5b221d4f2c2f2b322bbd60df2c5afc8 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 18:24:54 +0800
-Subject: [PATCH 02/70] module: Accept vendor DLKM signature and symbol CRC
+Subject: [PATCH 02/71] module: Accept vendor DLKM signature and symbol CRC
  mismatches
 
 The vendor modules in /vendor/lib/modules are built from the complete vendor

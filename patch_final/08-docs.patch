@@ -1810,6 +1810,91 @@ index 000000000..0d3822b3c
 +用 `llvm-objdump -h` 看 section（`cgroup_skb/ingress`、`sched_cls/...` 等），
 +再看 `maps` section 里的 `BPF_MAP_TYPE_*` 与重定位到 `bpf_*` 的 helper 列表，
 +就能得到**精确**的需求清单（比读源码更可靠）。需要的话我写个脚本一键出表。
+diff --git a/docs/lc_main-log-analysis.md b/docs/lc_main-log-analysis.md
+new file mode 100755
+index 000000000..9236d7cda
+--- /dev/null
++++ b/docs/lc_main-log-analysis.md
+@@ -0,0 +1,79 @@
++# lc_main 日志分析：开机变慢 + 锁屏卡顿（2026-09-24）
++
++分析对象：`E:\s6ke\boot_lc_main(2).txt`（10,493,952 字节，67,806 行，logcat + kernel log 合在一起，
++末尾被截断，覆盖约 **开机后 90 秒**）。
++
++## 0. 先说这份日志是什么
++
++```
++Linux version 4.14.190-perf (cp@ubuntu165) (clang version 10.0.7 for Android NDK,
++ GNU ld (binutils-2.27) 2.27.0.20170315) #1 SMP PREEMPT Wed Jun 28 17:08:03 CST 2023
++```
++
++* 内核 = **原厂内核**（2023-06-28 构建、clang 10.0.7、`cp@ubuntu165`），**没有 KernelSU**；
++  和我们平板上那版（clang 11.1.0 / 2026 / Zhiyu722）不是同一个。
++* 系统 = **MIUI 移植包**（`MI-SF`、`MIUINDBG`、`MiuiStubRegistry`、`ARCHI_PipelineCache`、`mqsas`、`migt`、
++  `turbosched`、`com.android.virt`、`AconfigPackage`），不是 EEBBK 的 EEUI。
++* 也就是说：**同一台 S6（sm6150/sdmmsteppe）跑的是 MIUI 移植 + 原厂内核**，问题出在这个组合上。
++
++## 1. 开机时长：内核不是瓶颈，慢在用户态
++
++| 阶段 | 时间 | 耗时 |
++|---|---|---|
++| `Booting Linux on physical CPU 0x0` | 23:46:03.551 | — |
++| `Freeing unused kernel memory: 960K`（内核 init 结束） | 23:46:04.507 | **0.96 s** ✓ 很快 |
++| init 开始解析 `/system/etc/init/bootanim.rc` | 23:46:05.963 | +1.5 s |
++| Zygote `START ... ZygoteInit` | 23:46:18.454 | +12.5 s |
++| SurfaceFlinger is starting | 23:46:19.298 | +0.8 s |
++| `starting service 'bootanim'` | 23:46:19.696 | — |
++| 日志结束（被截断，`sys.boot_completed=1` 未在窗口内出现） | 08:01:23（另一时钟域） | — |
++
++**结论：内核侧启动不到 1 秒，开机慢全部发生在用户态**，而且日志能指出具体是谁在拖：
++
++| 原因 | 证据（次数） | 能否从内核修 |
++|---|---|---|
++| **SELinux 拒绝刷屏**：MIUI 的属性/文件上下文在 ROM 策略里没映射 | `flags_health_ch` 的 `avc: denied` **约 12,460 条**（08:00 一分钟内 510 个进程 × ≈1140 条），init 明确报 `Context u:object_r:vendor_turbosched_prop:s0 is not valid (left unmapped)`、`mqsas_data_file`、`migt_file`、`framework_watchdog_config_prop`、`debug_tracing_prop`… | ✗ ROM 侧（属性上下文/策略不匹配），但**换内核能少一部分**（见下） |
++| **等不存在的 HAL，每次 1 秒** | `Waited one second for android.frameworks.sensorservice@1.0::ISensorManager/default` **164 次**（+ `Trying again` 165 次）、`vendor.qti.hardware.perf@2.2::IPerf` 相关 **181 次**、`Waited one second for activity` **38 次** | ✗ ROM 侧（这套 MIUI 包带的是别机型的 HAL 清单） |
++| **netd iptables 全部失败并每 5 秒重试** | `Extension CONNMARK is not supported, missing kernel module?` **320 次**，`IptablesRestoreController: iptables error` **107 次**，重试节奏 5 秒一轮（`-A st_clear_detect -m connmark --mark`、`-j CONNMARK --or-mark`、`-j NFLOG --nflog-group 0`） | **✓ 内核侧可修**（`CONNMARK`/`NFLOG`/`NF_CONNTRACK_MARK`） |
++| **bpfloader 大量失败 + verifier 刷屏** | `LibBpfLoader` **2,806 行**（含逐条 verifier 指令 dump） | ✗ 需要 5.4/5.10 的 BPF 反向移植（见 `bpf-gsi-feasibility.md`） |
++| MIUI 期望的内核模块缺失 | `/sys/module/metis/parameters/common_persist_vip_task` 写入失败、`turbosched_native: open /sys/module/metis/...` 失败、`vendor_turbosched_prop` 未映射 | ✗ `metis`/`turbosched` 是 MIUI 闭源模块，没有源码 |
++| debugfs 不可用 | `selinux: Could not stat /sys/kernel/debug`、init 拷贝 `/system/etc/ftrace_synthetic_events.conf → /sys/kernel/debug/tracing/` 失败、`msm_vidc: Failed to create debugfs` **15 次** | **✓ 内核侧可修**（`CONFIG_DEBUG_FS`，**我们这棵内核原本也是关的**） |
++| 进程崩溃 | `tombstone/debuggerd` 相关 **232 行**、`has died`/`FATAL` **18 行** | ✗ 多半是 ROM 侧 HAL/策略不匹配 |
++
++## 2. 锁屏后卡顿：日志没覆盖锁屏那一刻，但持续错误已经能解释
++
++这份日志只到开机后 ~90 秒，没有锁屏/待机段，所以不能直接"拍到"卡顿瞬间；
++但日志里有**三类一直存在、待机时也照样发生**的错误，恰好对应锁屏卡顿的典型成因：
++
++1. **`libprocessgroup: JoinCgroup: controller schedtune is not found` × 56**
++   → MIUI/Android 用 `schedtune` cgroup 做前台 boost；这个内核没提供（或没挂），
++   ROM 每次给进程分组都失败 ⇒ **前台调度提升完全失效**，锁屏/解锁切换、后台任务竞争时最明显。
++   **内核侧可修**：`CONFIG_SCHED_TUNE=y`（我们这棵内核已经是 `y`）。
++2. **netd 的 iptables 5 秒重试循环**（上面那张表第 3 行）
++   → 待机时也每 5 秒唤醒一次 CPU 去重放规则并失败，属于"锁屏后明明没事却在耗电/发烫/掉帧"的典型。
++   **内核侧可修**：`CONFIG_NETFILTER_XT_MATCH_CONNMARK` + `_TARGET_CONNMARK` + `_TARGET_NFLOG` + `NF_CONNTRACK_MARK`
++   （我们这棵内核**全部已开** ✓）。
++3. **`lowmemorykiller: Process reaping is not supported`**
++   → 内存回收退回到老路径；内存一紧张，锁屏后后台批量启动/回收就会卡。
++   **内核侧可修**：`CONFIG_PSI=y` + `CONFIG_ANDROID_LOW_MEMORY_KILLER=y` + `CONFIG_ZRAM=y`（我们内核 ✓ 都有）。
++4. 另外 `AudioFlinger: no wake lock to update, system not ready yet` × 302、
++   `platform_get_mixer_control: mixer ctl not obtained` × 224、`audio_route` 错误 × 896
++   → 音频 HAL 一直在无效重试（这套 ROM 的音频配置与这台机器的 codec 不匹配），
++   锁屏提示音/待机音频上下文切换会连带卡顿。**ROM 侧**（对应我们文档第九/十三节那套问题）。
++
++## 3. 结论与建议
++
++* **"换我们这棵内核"就能消掉上面第 1、2、3 类问题**（schedtune / CONNMARK / PSI+LMK+ZRAM 我们都开了，
++  原厂那版内核没有），对开机速度和锁屏卡顿都是直接收益；顺带还带 KernelSU root 与容器支持。
++* **我们唯一缺的是 `CONFIG_DEBUG_FS`**（日志里 debugfs/ftrace 那一堆失败就是这个原因），已补上并重编。
++* 剩下**修不了**的三件事要说清楚：ROM 缺 HAL（sensorservice@1.0 / perf@2.2）、
++  MIUI 闭源内核模块（metis/turbosched）、A15/A16 级 BPF（需要千级提交的 backport）。
++* ROM 侧建议（改 ROM 不是改内核）：
++  1. 补全 MIUI 的属性/文件上下文（`vendor_turbosched_prop`、`mqsas_data_file`、`migt_file`、
++     `framework_watchdog_config_prop`、`debug_tracing_prop` 等）到 `/system/etc/selinux/*_property_contexts`，
++     或直接把 `flags_health_ch` 的 aconfig 健康检查关掉——现在每个进程启动都要刷几十条 `avc denied`；
++  2. 把 HAL 清单（`manifest.xml`）里这台机器不存在的 HAL 删掉（sensorservice@1.0、perf@2.2 等），
++     否则每次启动都要等 1 秒超时；
++  3. 关掉对 `metis`/`turbosched` 的依赖（`persist.vendor.turbosched.*`、libturbosched），
++     内核里没有这些模块，ROM 侧只能降级；
++  4. 音频按本仓库文档第九、十三节的结论配（awinic 功放 + `TECHPACK=y` 的内核）。
 diff --git a/docs/vendor-mod-attempt.md b/docs/vendor-mod-attempt.md
 new file mode 100755
 index 000000000..74a4a5e4a
@@ -1873,5 +1958,6 @@ index 000000000..74a4a5e4a
 #   EEBBK_S6_progress.md
 #   README.md
 #   docs/bpf-gsi-feasibility.md
+#   docs/lc_main-log-analysis.md
 #   docs/vendor-mod-attempt.md
 

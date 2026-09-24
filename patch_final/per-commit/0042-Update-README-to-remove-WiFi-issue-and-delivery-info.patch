@@ -1,7 +1,7 @@
 From e4963460da5579276f999aee77dafcada7a081db Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <2549812261@qq.com>
 Date: Sun, 13 Sep 2026 22:41:23 +0800
-Subject: [PATCH 42/70] Update README to remove WiFi issue and delivery info
+Subject: [PATCH 42/71] Update README to remove WiFi issue and delivery info
 
 Removed WiFi driver issue note and delivery image details from README.
 ---

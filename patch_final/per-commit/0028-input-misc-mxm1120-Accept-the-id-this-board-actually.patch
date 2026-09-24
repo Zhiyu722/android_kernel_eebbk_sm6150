@@ -1,7 +1,7 @@
 From 840cc5a4241d81ea7ea389ad13c773a2ebf57c2c Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 10:35:31 +0800
-Subject: [PATCH 28/70] input: misc: mxm1120: Accept the id this board actually
+Subject: [PATCH 28/71] input: misc: mxm1120: Accept the id this board actually
  reports
 
 The bring-up image finally produced the kernel log, and it explains why the hall

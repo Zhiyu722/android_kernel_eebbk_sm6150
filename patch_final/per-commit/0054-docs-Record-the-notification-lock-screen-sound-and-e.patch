@@ -1,7 +1,7 @@
 From aea58e50d4917e7ab2bf04e4726a6d23e1244b4d Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 10:44:18 +0800
-Subject: [PATCH 54/70] docs: Record the notification, lock-screen sound and
+Subject: [PATCH 54/71] docs: Record the notification, lock-screen sound and
  elevator retract fixes
 
 The notification sound was inaudible because the speaker ring/notification

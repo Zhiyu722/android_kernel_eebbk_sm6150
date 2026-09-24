@@ -1,7 +1,7 @@
 From 9e2278d66911760c34995eb2754648312e031d18 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 09:41:54 +0800
-Subject: [PATCH 24/70] docs: Complete patch12 with the hall framework and the
+Subject: [PATCH 24/71] docs: Complete patch12 with the hall framework and the
  calibration handover
 
 patch12 now carries ten patches: the two hall sensor drivers, the elevator motor

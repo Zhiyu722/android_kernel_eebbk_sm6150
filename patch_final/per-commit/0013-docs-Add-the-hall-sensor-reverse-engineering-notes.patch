@@ -1,7 +1,7 @@
 From 61a6c38150f532c3c8164ad3570516dcdf5e4e64 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 21:50:04 +0800
-Subject: [PATCH 13/70] docs: Add the hall sensor reverse-engineering notes
+Subject: [PATCH 13/71] docs: Add the hall sensor reverse-engineering notes
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit

@@ -1,7 +1,7 @@
 From 82b1ad21d65df7cf792e13b5d70fc21834bceaf7 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Fri, 18 Sep 2026 18:02:43 +0800
-Subject: [PATCH 49/70] docs: Keep only the current patch write-up
+Subject: [PATCH 49/71] docs: Keep only the current patch write-up
 
 The per-patch READMEs of the earlier deliveries (s6patch*, patch12) and the two
 standalone reverse engineering reports are superseded: patch+++ carries every

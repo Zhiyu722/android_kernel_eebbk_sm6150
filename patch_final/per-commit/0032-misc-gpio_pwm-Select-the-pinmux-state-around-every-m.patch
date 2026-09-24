@@ -1,7 +1,7 @@
 From c82a07961d863bfee7a6a99608afdaac13f6effa Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 11:59:39 +0800
-Subject: [PATCH 32/70] misc: gpio_pwm: Select the pinmux state around every
+Subject: [PATCH 32/71] misc: gpio_pwm: Select the pinmux state around every
  move
 
 With the front camera finally enumerated and the hang gone, the elevator still

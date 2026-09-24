@@ -1,7 +1,7 @@
 From 861f832a916b07b35bc1bd6371ac6b830ed6ed6e Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 23:06:59 +0800
-Subject: [PATCH 17/70] misc: Match the vendor elevator driver's timings,
+Subject: [PATCH 17/71] misc: Match the vendor elevator driver's timings,
  states and key events
 
 A deeper disassembly of the factory gpio_pwm driver corrected several things in

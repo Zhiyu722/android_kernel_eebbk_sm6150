@@ -1,7 +1,7 @@
 From 71611fa25c6fa746ecf97d06e7cc6560202792ae Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <2549812261@qq.com>
 Date: Sun, 13 Sep 2026 23:34:57 +0800
-Subject: [PATCH 43/70] Update UTS_VERSION to include author and flags
+Subject: [PATCH 43/71] Update UTS_VERSION to include author and flags
 
 ---
  scripts/mkcompile_h | 2 +-

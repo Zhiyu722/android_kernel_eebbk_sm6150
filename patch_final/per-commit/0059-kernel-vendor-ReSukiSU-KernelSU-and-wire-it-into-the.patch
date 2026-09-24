@@ -1,7 +1,7 @@
 From 3cc388a8843b289132e939e3f1fce1f2b53e54b0 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 13:56:37 +0800
-Subject: [PATCH 59/70] kernel: vendor ReSukiSU (KernelSU) and wire it into the
+Subject: [PATCH 59/71] kernel: vendor ReSukiSU (KernelSU) and wire it into the
  build
 
 ReSukiSU is the non-GKI branch of KernelSU (kernel 3.4+).  This kernel is

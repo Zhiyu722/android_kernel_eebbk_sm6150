@@ -1,7 +1,7 @@
 From e3d19be4506b94c41ce287ddb0f0cc61362fc05c Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Fri, 18 Sep 2026 18:51:59 +0800
-Subject: [PATCH 51/70] ASoC: msm-pcm-routing: Add the tertiary MI2S VI
+Subject: [PATCH 51/71] ASoC: msm-pcm-routing: Add the tertiary MI2S VI
  feedback mux
 
 The ROM routes the speaker, and reads the AW882xx feedback, on the tertiary

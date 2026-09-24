@@ -1,7 +1,7 @@
 From 3ef1c828a3cef5a197447ae65738c2d9154d82c9 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 13:56:37 +0800
-Subject: [PATCH 60/70] fs,kernel: add the ReSukiSU manual hooks required on
+Subject: [PATCH 60/71] fs,kernel: add the ReSukiSU manual hooks required on
  4.14
 
 Six hook symbols are enforced at compile time by

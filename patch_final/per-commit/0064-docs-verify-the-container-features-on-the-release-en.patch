@@ -1,7 +1,7 @@
 From b3d8129fab944197623de28a57e0a0e31c3650ab Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 16:10:54 +0800
-Subject: [PATCH 64/70] docs: verify the container features on the release
+Subject: [PATCH 64/71] docs: verify the container features on the release
  (enforcing) image
 
 Both images now satisfy the Droidspaces v6.5.0 requirement check.  The release

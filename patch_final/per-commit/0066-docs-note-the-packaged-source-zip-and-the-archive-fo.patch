@@ -1,7 +1,7 @@
 From 5311adc592084a241a78d67cd26ce8e8694b4ff9 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 16:22:52 +0800
-Subject: [PATCH 66/70] docs: note the packaged source zip and the archive
+Subject: [PATCH 66/71] docs: note the packaged source zip and the archive
  folder layout
 
 dist/ keeps only the current images (container release/debug, the previous KSU

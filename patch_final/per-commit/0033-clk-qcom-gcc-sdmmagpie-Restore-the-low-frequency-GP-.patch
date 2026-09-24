@@ -1,7 +1,7 @@
 From 7f916bc91a8438a01c704edc8f17151b6e7e7bfa Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 12:47:59 +0800
-Subject: [PATCH 33/70] clk: qcom: gcc-sdmmagpie: Restore the low frequency GP
+Subject: [PATCH 33/71] clk: qcom: gcc-sdmmagpie: Restore the low frequency GP
  clock entries
 
 The camera elevator chopper is gcc_gp2_clk, the branch of gcc_gp2_clk_src

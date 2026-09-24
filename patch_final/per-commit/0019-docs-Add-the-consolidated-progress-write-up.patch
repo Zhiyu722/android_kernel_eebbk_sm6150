@@ -1,7 +1,7 @@
 From 0b6da6b125b2fd8c5d964ffa1ed306c8a8a31e65 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 23:15:31 +0800
-Subject: [PATCH 19/70] docs: Add the consolidated progress write-up
+Subject: [PATCH 19/71] docs: Add the consolidated progress write-up
 
 EEBBK_S6_progress.md collects the state of every item worked on: the two sound
 root causes with the symbol counts that prove them, the restored camera info

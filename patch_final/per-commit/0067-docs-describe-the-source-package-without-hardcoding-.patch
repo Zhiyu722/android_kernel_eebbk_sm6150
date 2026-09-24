@@ -1,7 +1,7 @@
 From b53c2639fda5c028796969084ff252555348a3bb Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 16:27:30 +0800
-Subject: [PATCH 67/70] docs: describe the source package without hardcoding
+Subject: [PATCH 67/71] docs: describe the source package without hardcoding
  its own md5
 
 A zip cannot contain the md5 of itself, so the README now names the package

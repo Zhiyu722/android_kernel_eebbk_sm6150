@@ -1,7 +1,7 @@
 From 81f46a26617c9eaa75d2df359f797ed0913930a2 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 20:40:28 +0800
-Subject: [PATCH 06/70] docs: Track the .patch files of the delivered patch
+Subject: [PATCH 06/71] docs: Track the .patch files of the delivered patch
  sets
 
 The top-level .gitignore has "*.patch", so the patches were silently skipped by

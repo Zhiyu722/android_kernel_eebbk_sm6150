@@ -1,7 +1,7 @@
 From 3c08d362eb209a09ef8013f5953bcb1f0599b2a9 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 09:39:24 +0800
-Subject: [PATCH 22/70] input: hall: Add the BBK hall sensor framework
+Subject: [PATCH 22/71] input: hall: Add the BBK hall sensor framework
 
 This is the last missing piece of the hall subsystem: the framework that polls
 the up and the down hall sensor, keeps their recent samples in small ring

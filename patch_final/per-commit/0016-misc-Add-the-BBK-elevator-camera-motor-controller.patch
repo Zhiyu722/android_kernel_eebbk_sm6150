@@ -1,7 +1,7 @@
 From 4a463d27fdcde068ef5e33ac3a097b149aabb466 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 22:55:13 +0800
-Subject: [PATCH 16/70] misc: Add the BBK elevator camera motor controller
+Subject: [PATCH 16/71] misc: Add the BBK elevator camera motor controller
 
 The front camera of the EEBBK S6 sits on a motorised elevator that is pushed out
 when the camera application starts.  The controller driver is called vib_pwm in

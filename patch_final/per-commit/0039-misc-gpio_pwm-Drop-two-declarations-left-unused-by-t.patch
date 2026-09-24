@@ -1,7 +1,7 @@
 From 4f7c56859adffe8f6c63c1d5568d6c757176abf3 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 12:50:50 +0800
-Subject: [PATCH 39/70] misc: gpio_pwm: Drop two declarations left unused by
+Subject: [PATCH 39/71] misc: gpio_pwm: Drop two declarations left unused by
  the clock change
 
 Moving the clk_set_rate() calls into vib_pwm_set_clock() left 'int ret'

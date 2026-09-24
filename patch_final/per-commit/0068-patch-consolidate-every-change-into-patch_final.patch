@@ -1,7 +1,7 @@
 From d66bd4820e539f4e88b25c3915058d35c57b48f5 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 16:54:18 +0800
-Subject: [PATCH 68/70] patch: consolidate every change into patch_final
+Subject: [PATCH 68/71] patch: consolidate every change into patch_final
 
 Replaces the superseded patch+++ folder (43 stale files, generated from an
 earlier state of the tree) with a complete, current patch set:

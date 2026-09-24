@@ -1,7 +1,7 @@
 From 82beae8b766419c60d865a93d9918909526a1b7a Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 12:13:30 +0800
-Subject: [PATCH 57/70] input: hall: Start the MXM1120 conversion and stop
+Subject: [PATCH 57/71] input: hall: Start the MXM1120 conversion and stop
  aborting healthy moves
 
 The hall sensors were reported as dead (bbk_hall_data returned the -2000
