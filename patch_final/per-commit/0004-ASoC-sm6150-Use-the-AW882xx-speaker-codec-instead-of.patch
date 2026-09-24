@@ -1,7 +1,7 @@
 From a8b099b56eb8fd03a3d72d3e3ecd1850b9502472 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 20:24:26 +0800
-Subject: [PATCH 04/71] ASoC: sm6150: Use the AW882xx speaker codec instead of
+Subject: [PATCH 04/73] ASoC: sm6150: Use the AW882xx speaker codec instead of
  TFA98xx
 
 populate_snd_card_dailinks() forced the legacy single-codec fields of the two

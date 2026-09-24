@@ -1,7 +1,7 @@
 From a88f8f54e6bc08c6c67a7363270de0834c9b6566 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 15:43:38 +0800
-Subject: [PATCH 63/71] eebbk: enable the container features Droidspaces asks
+Subject: [PATCH 63/73] eebbk: enable the container features Droidspaces asks
  for
 
 Droidspaces v6.5.0's requirement check reported PID namespace, IPC namespace

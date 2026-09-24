@@ -1,7 +1,7 @@
 From 1eaa23fa9e80f8b96502fafebe241850db597c7d Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 20:55:54 +0800
-Subject: [PATCH 07/71] input: touchscreen: focaltech: Register the MSM DRM
+Subject: [PATCH 07/73] input: touchscreen: focaltech: Register the MSM DRM
  notifier
 
 The driver picks its display-blank notifier with

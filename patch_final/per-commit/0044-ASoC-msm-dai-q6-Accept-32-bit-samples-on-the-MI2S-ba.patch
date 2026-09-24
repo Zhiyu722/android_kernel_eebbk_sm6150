@@ -1,7 +1,7 @@
 From 9d2889df65167a31a39a714c3f54e1a45bc1fe5e Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Fri, 18 Sep 2026 18:01:42 +0800
-Subject: [PATCH 44/71] ASoC: msm-dai-q6: Accept 32 bit samples on the MI2S
+Subject: [PATCH 44/73] ASoC: msm-dai-q6: Accept 32 bit samples on the MI2S
  backend
 
 The ROM's audio HAL drives the speaker through the tertiary MI2S port with 32

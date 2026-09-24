@@ -1,7 +1,7 @@
 From 62c44f9efb0f883216c448f65d8b6ebe5c574403 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 15:03:13 +0800
-Subject: [PATCH 62/71] docs: audio all-silence root cause, vendor slimming
+Subject: [PATCH 62/73] docs: audio all-silence root cause, vendor slimming
  attempt, BPF/GSI assessment
 
 * section 13: reproduce and explain the "after a while every sound dies" bug.

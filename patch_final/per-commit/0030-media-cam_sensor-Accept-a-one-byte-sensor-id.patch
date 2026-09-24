@@ -1,7 +1,7 @@
 From 0dafae42b4dba68f3db75450c0a25f0cf8774a84 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 11:26:49 +0800
-Subject: [PATCH 30/71] media: cam_sensor: Accept a one byte sensor id
+Subject: [PATCH 30/73] media: cam_sensor: Accept a one byte sensor id
 
 The front camera never finished its probe:
 

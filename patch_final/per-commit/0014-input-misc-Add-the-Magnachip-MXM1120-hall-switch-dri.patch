@@ -1,7 +1,7 @@
 From d29eb7b37e77197411f27d63d73f9b1539a1e5e9 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 22:40:54 +0800
-Subject: [PATCH 14/71] input: misc: Add the Magnachip MXM1120 hall switch
+Subject: [PATCH 14/73] input: misc: Add the Magnachip MXM1120 hall switch
  driver
 
 The EEBBK S6 carries two Magnachip MXM1120 hall switches on i2c 0x0c and 0x0f

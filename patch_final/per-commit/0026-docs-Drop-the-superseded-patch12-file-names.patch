@@ -1,7 +1,7 @@
 From ca7c077cb5b1a0ae1239e32012a15611d85a40c1 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 09:53:39 +0800
-Subject: [PATCH 26/71] docs: Drop the superseded patch12 file names
+Subject: [PATCH 26/73] docs: Drop the superseded patch12 file names
 
 The renumbering in the previous commit replaced three of the patch files; git add with a glob does not stage deletions, so the old names lingered as tracked but missing.  Stage them away.
 

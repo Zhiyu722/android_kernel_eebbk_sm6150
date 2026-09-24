@@ -1,7 +1,7 @@
 From 8877f31d63aa12b0bfc19b19daf4d1f091050748 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Fri, 18 Sep 2026 19:29:04 +0800
-Subject: [PATCH 52/71] input: misc: mxm1120: Leave the hall sensors in standby
+Subject: [PATCH 52/73] input: misc: mxm1120: Leave the hall sensors in standby
  for now
 
 Starting the conversion (bit 0, START) is what the factory driver does and it

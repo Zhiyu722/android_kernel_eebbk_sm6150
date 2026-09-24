@@ -1,7 +1,7 @@
 From 804924c0e9c72a299d00d32216f866feab1d2382 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 13:56:38 +0800
-Subject: [PATCH 61/71] docs: document the ReSukiSU integration
+Subject: [PATCH 61/73] docs: document the ReSukiSU integration
 
 Adds section 12 to EEBBK_S6_changes.md: hook table with the exact insert
 points and the enforced symbols, why SUSFS and the static symbol exports are

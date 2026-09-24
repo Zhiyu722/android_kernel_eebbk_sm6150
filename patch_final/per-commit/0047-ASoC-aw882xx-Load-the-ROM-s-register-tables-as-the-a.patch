@@ -1,7 +1,7 @@
 From e88e623ada30b3ab51762d11842bb088a39d75d4 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Fri, 18 Sep 2026 18:01:42 +0800
-Subject: [PATCH 47/71] ASoC: aw882xx: Load the ROM's register tables as the
+Subject: [PATCH 47/73] ASoC: aw882xx: Load the ROM's register tables as the
  amplifier profile
 
 The vendor's tables are plain 16 bit address/value pairs, which is exactly what

@@ -1,7 +1,7 @@
 From d630a0f48176f53485443d7b5c54d847e794db3d Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 12:48:00 +0800
-Subject: [PATCH 36/71] misc: bbk_debug: Make the log node filterable and add
+Subject: [PATCH 36/73] misc: bbk_debug: Make the log node filterable and add
  an elevator pin node
 
 The ring buffer on this ROM is flooded with SELinux audit records from adb shell

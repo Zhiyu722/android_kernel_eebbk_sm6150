@@ -1,7 +1,7 @@
 From c75936266df22618f7d2ba0770041162c026a599 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 19:36:43 +0800
-Subject: [PATCH 03/71] techpack: Build the audio stack and the ADSP loader
+Subject: [PATCH 03/73] techpack: Build the audio stack and the ADSP loader
  into the kernel
 
 techpack/Kbuild reads obj-${TECHPACK}, so passing TECHPACK=n compiles only

@@ -1,7 +1,7 @@
 From 2c17d551c78d1586d7c1b8eaa92d525997e018d9 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 09:53:26 +0800
-Subject: [PATCH 25/71] misc: Add bring-up helpers behind
+Subject: [PATCH 25/73] misc: Add bring-up helpers behind
  CONFIG_BBK_DEBUG_BRINGUP
 
 On this ROM a driver that fails to probe leaves no trace we can see from adb:

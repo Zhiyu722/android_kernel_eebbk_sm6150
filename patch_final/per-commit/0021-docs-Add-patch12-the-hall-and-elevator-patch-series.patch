@@ -1,7 +1,7 @@
 From 436735c5f48eef9545c5ec1968351f68ce8dfb16 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 08:58:15 +0800
-Subject: [PATCH 21/71] docs: Add patch12, the hall and elevator patch series
+Subject: [PATCH 21/73] docs: Add patch12, the hall and elevator patch series
 
 patch12/ collects every change of the hall and elevator work as eight patches
 that can be applied in order: the reconstructed iSentek IST8801 and Magnachip

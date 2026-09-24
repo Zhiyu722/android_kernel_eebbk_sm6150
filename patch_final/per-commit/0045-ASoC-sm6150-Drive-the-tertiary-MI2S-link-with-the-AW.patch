@@ -1,7 +1,7 @@
 From d799367d8798995fd058597b8ae44cfc2997e1df Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Fri, 18 Sep 2026 18:01:42 +0800
-Subject: [PATCH 45/71] ASoC: sm6150: Drive the tertiary MI2S link with the
+Subject: [PATCH 45/73] ASoC: sm6150: Drive the tertiary MI2S link with the
  AW882xx codec
 
 The ROM's mixer paths send speaker playback to the tertiary MI2S backend

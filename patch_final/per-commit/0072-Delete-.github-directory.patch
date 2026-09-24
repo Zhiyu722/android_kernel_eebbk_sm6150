@@ -1,0 +1,17 @@
+From 4fd262ae2904a7192bb3a4b6d508dd7605c406a7 Mon Sep 17 00:00:00 2001
+From: Zhiyu722 <2549812261@qq.com>
+Date: Mon, 21 Sep 2026 22:35:27 +0800
+Subject: [PATCH 72/73] Delete .github directory
+
+---
+ .github/workflows/build.yml | 1 -
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 .github/workflows/build.yml
+
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+deleted file mode 100644
+index 8b1378917..000000000
+--- a/.github/workflows/build.yml
++++ /dev/null
+@@ -1 +0,0 @@
+-

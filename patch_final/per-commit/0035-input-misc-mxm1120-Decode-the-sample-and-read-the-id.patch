@@ -1,7 +1,7 @@
 From d2d844e8abcba22f4f680d257c8f62a63c1a3c4c Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 12:47:59 +0800
-Subject: [PATCH 35/71] input: misc: mxm1120: Decode the sample and read the id
+Subject: [PATCH 35/73] input: misc: mxm1120: Decode the sample and read the id
  the way the factory does
 
 Two decoding errors made the hall sensors useless: the chip id was read from

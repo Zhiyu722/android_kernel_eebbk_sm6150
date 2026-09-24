@@ -1,7 +1,7 @@
 From 7771c5067af0c897a28839f6d9805df514f4c345 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 12:48:00 +0800
-Subject: [PATCH 37/71] media: cam_eeprom: Read only as many memory map values
+Subject: [PATCH 37/73] media: cam_eeprom: Read only as many memory map values
  as the tree provides
 
 The factory device tree gives six values for each memory map property while

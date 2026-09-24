@@ -1,7 +1,7 @@
 From bd82954028e29ef5024ab35b555ca705669fe70e Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 11:50:00 +0800
-Subject: [PATCH 31/71] misc: gpio_pwm: Never sleep in the move timer callback
+Subject: [PATCH 31/73] misc: gpio_pwm: Never sleep in the move timer callback
 
 Switching to the front camera froze the whole device.  The captured kernel log
 shows why, and it is this driver:

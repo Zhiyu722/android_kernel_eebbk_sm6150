@@ -1,7 +1,7 @@
 From bdb2804e9458e3c433b0d66102a44e540dbb41e4 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Fri, 18 Sep 2026 18:01:43 +0800
-Subject: [PATCH 48/71] input: misc: mxm1120: Set START when enabling the hall
+Subject: [PATCH 48/73] input: misc: mxm1120: Set START when enabling the hall
  sensor
 
 The factory's m1120_set_operation_mode() writes OPMODE | 0x09 to begin

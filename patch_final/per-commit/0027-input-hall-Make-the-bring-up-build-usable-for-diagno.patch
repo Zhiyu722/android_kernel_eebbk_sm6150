@@ -1,7 +1,7 @@
 From bb75bef6933bce7a053d424f397370732af028aa Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 10:10:21 +0800
-Subject: [PATCH 27/71] input: hall: Make the bring-up build usable for
+Subject: [PATCH 27/73] input: hall: Make the bring-up build usable for
  diagnosis
 
 Flashing the previous bring-up image showed two problems with it:

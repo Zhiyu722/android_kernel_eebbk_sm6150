@@ -1,7 +1,7 @@
 From fcdee8c2f2d220654fca1621d78035cb4b8efce7 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 11:43:46 +0800
-Subject: [PATCH 56/71] docs: Record the hall sensor investigation and the
+Subject: [PATCH 56/73] docs: Record the hall sensor investigation and the
  working build procedure
 
 The hall sensors were never broken: the mxm1120 driver deliberately wrote only

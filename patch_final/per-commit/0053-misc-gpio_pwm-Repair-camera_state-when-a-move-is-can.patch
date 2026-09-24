@@ -1,7 +1,7 @@
 From e368c0e7461883c06d898dbd979f34c29026add4 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Fri, 18 Sep 2026 19:29:04 +0800
-Subject: [PATCH 53/71] misc: gpio_pwm: Repair camera_state when a move is
+Subject: [PATCH 53/73] misc: gpio_pwm: Repair camera_state when a move is
  cancelled
 
 camera_state 4 and 5 mean "moving", and vib_pwm_move_to() refuses every later

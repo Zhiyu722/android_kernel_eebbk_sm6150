@@ -1,7 +1,7 @@
-From 415a083a5dcc2ecb7e4eeafb8e2aef7086ebecb8 Mon Sep 17 00:00:00 2001
+From 83f167bcc42bd2cda44a7f8a7ed68c5eafefaecc Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Thu, 24 Sep 2026 18:10:47 +0800
-Subject: [PATCH 71/71] configs: enable DEBUG_FS, the one kernel-side gap the
+Subject: [PATCH 73/73] configs: enable DEBUG_FS, the one kernel-side gap the
  lc_main ROM hits
 
 Analysis of the MIUI-port boot log (docs/lc_main-log-analysis.md) shows the

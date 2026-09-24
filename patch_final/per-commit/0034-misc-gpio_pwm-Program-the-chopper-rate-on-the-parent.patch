@@ -1,7 +1,7 @@
 From 7aad2dd81e7eaa3b4625035cf78447ad869ce524 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sun, 13 Sep 2026 12:47:59 +0800
-Subject: [PATCH 34/71] misc: gpio_pwm: Program the chopper rate on the parent
+Subject: [PATCH 34/73] misc: gpio_pwm: Program the chopper rate on the parent
  RCG and balance the clock
 
 clk_set_rate() on gcc_gp2_clk only reaches the divider through the parent RCG,

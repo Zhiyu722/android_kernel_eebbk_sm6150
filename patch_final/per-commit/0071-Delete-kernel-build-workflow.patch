@@ -1,0 +1,112 @@
+From 7ba1c739e148060f848e048ef37e2dc72890ada9 Mon Sep 17 00:00:00 2001
+From: Zhiyu722 <2549812261@qq.com>
+Date: Mon, 21 Sep 2026 22:32:50 +0800
+Subject: [PATCH 71/73] Delete kernel build workflow
+
+Removed the entire build workflow for the kernel.
+---
+ .github/workflows/build.yml | 96 -------------------------------------
+ 1 file changed, 96 deletions(-)
+
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 6b6e29976..8b1378917 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -1,97 +1 @@
+-name: Build kernel
+-on:
+-  workflow_call:
+-  workflow_dispatch:
+-  schedule:
+-    - cron: '0 21 * * *'  
+-  push:
+-  
+-jobs:
+-  build:
+-    name: build
+-    runs-on: ubuntu-22.04
+-    steps:
+ 
+-      - name: Get branch name
+-        id: branch-names
+-        uses: tj-actions/branch-names@v8
+-
+-      - name: Setting up SWAP
+-        uses: pierotofy/set-swap-space@master
+-        with:
+-          swap-size-gb: 5
+-
+-      - name: Configure Fast APT Mirror
+-        uses: vegardit/fast-apt-mirror.sh@v1
+-
+-      - name: Prepare environment
+-        run: |
+-          sudo apt-get update
+-          sudo apt-get install git automake flex lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib libxml2-utils bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev squashfs-tools pngcrush schedtool dpkg-dev liblz4-tool make optipng maven libssl-dev pwgen libswitch-perl policycoreutils minicom libxml-sax-base-perl libxml-simple-perl bc libc6-dev-i386 libx11-dev lib32z-dev libgl1-mesa-dev xsltproc unzip device-tree-compiler
+-          sudo apt install -yqq bison build-essential device-tree-compiler flex gcc-aarch64-linux-gnu python3 python3-dev python3-venv swig
+-          mkdir -p $GITHUB_WORKSPACE/workdir
+-          cd $GITHUB_WORKSPACE/workdir
+-          echo "BUILD_TIME=$(TZ=Asia/Shanghai date "+%Y%m%d%H%M")" >> $GITHUB_ENV
+-
+-      - name: Get clang toolchain
+-        run: |
+-          git clone https://github.com/LineageOS/android_prebuilts_clang_kernel_linux-x86_clang-r416183b --depth 1 $GITHUB_WORKSPACE/workdir/clang
+-
+-      - name: Get gcc toolchain
+-        run: |
+-          git clone https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 -b lineage-19.1 --depth=1 $GITHUB_WORKSPACE/workdir/gcc
+-
+-      - name: Clone kernel source
+-        run: |
+-          git clone --recursive https://github.com/$GITHUB_REPOSITORY/ -b ${{ steps.branch-names.outputs.current_branch }} --depth 1 $GITHUB_WORKSPACE/workdir/source
+-
+-      - name: Setting up ccache
+-        uses: hendrikmuhs/ccache-action@v1.2
+-        with:
+-         key: build-kernel-mido-kernel
+-         max-size: 2G
+-
+-      - name: Build kernel
+-        run: |
+-          export KBUILD_BUILD_HOST=Github-Action
+-          export KBUILD_BUILD_USER=$(echo ${{ github.actor }})
+-          export ARCH="arm64"
+-          export SUBARCH="arm64"
+-          export CROSS_COMPILE="aarch64-linux-android-"
+-          export CLANG_TRIPLE="aarch64-linux-gnu-"
+-          export PATH="$GITHUB_WORKSPACE/workdir/clang/bin:$GITHUB_WORKSPACE/workdir/gcc/bin/:$PATH"
+-          export TARGET_PRODUCT=sm6150
+-
+-          cd $GITHUB_WORKSPACE/workdir/source
+-          make -j$(nproc --all) O=out CC=clang vendor/sdmsteppe-perf_defconfig h130.config
+-          make -j$(nproc --all) O=out CC=clang DTC=dtc 2>&1 | tee kernel.log
+-
+-      - name: Upload logs
+-        uses: actions/upload-artifact@v4
+-        with:
+-          name: android_kernel_qcom_sm7150_${{ env.BUILD_TIME }}_kernel.log
+-          path: workdir/source/kernel.log
+-
+-      - name: Check kernel file
+-        run: |
+-          cd $GITHUB_WORKSPACE/workdir
+-          if [ -f source/out/arch/arm64/boot/Image.gz ]; then
+-              echo "CHECK_FILE_IS_OK=true" >> $GITHUB_ENV
+-          else
+-              echo "Kernel output file is empty"
+-              exit 1
+-          fi
+-
+-      - name: Upload Image file
+-        if: env.CHECK_FILE_IS_OK == 'true'
+-        uses: actions/upload-artifact@v4
+-        with:
+-          name: Image-gz-4.14
+-          path: workdir/source/out/arch/arm64/boot/Image.gz
+-
+-      - name: Upload dtbs file
+-        if: env.CHECK_FILE_IS_OK == 'true'
+-        uses: actions/upload-artifact@v4
+-        with:
+-          name: dtbs-4.14
+-          path: workdir/source/out/arch/arm64/boot/dts/eebbk-qcom/sdmmagpie*

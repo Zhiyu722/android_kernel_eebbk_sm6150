@@ -1,7 +1,7 @@
 From 3f35bcd901cfaf52faebc94f5deefbd5ed18bfe5 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 23:07:15 +0800
-Subject: [PATCH 18/71] docs: Add the full vib_pwm and bbk_hall_core
+Subject: [PATCH 18/73] docs: Add the full vib_pwm and bbk_hall_core
  reverse-engineering reports
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8

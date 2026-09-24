@@ -1,7 +1,7 @@
 From fb6f2a3f45bac3fa0500d247e58e50438f33c25e Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 17:12:10 +0800
-Subject: [PATCH 70/71] patch: refresh patch_final after tracking the firmware
+Subject: [PATCH 70/73] patch: refresh patch_final after tracking the firmware
  blobs
 
 Regenerated the topic patches and the per-commit series so they also carry

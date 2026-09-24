@@ -1,7 +1,7 @@
 From 1a41ac951d2b5d0554e78895dccb1dcf46751c42 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 19 Sep 2026 17:11:39 +0800
-Subject: [PATCH 69/71] tree: track the firmware blobs the build needs but
+Subject: [PATCH 69/73] tree: track the firmware blobs the build needs but
  .gitignore hid
 
 A worktree check (check out the vendor-import commit, apply patch_final, compare

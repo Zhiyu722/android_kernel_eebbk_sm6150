@@ -1,7 +1,7 @@
 From 4133ef33267ca13a26e83c4e2e3750b4c2f35b6a Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 21:50:01 +0800
-Subject: [PATCH 10/71] input: misc: Add the iSentek IST8801 hall switch driver
+Subject: [PATCH 10/73] input: misc: Add the iSentek IST8801 hall switch driver
 
 The EEBBK S6 carries iSentek IST8801 3D hall-effect switches on i2c 0x18 and
 0x1b (dt compatibles isentek,ist8801-0/-1/-2).  The vendor driver is built into

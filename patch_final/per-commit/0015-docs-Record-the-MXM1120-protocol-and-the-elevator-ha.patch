@@ -1,7 +1,7 @@
 From 3b5cc24fefe190322771e237b2a6aca6dd457909 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 22:47:18 +0800
-Subject: [PATCH 15/71] docs: Record the MXM1120 protocol and the elevator
+Subject: [PATCH 15/73] docs: Record the MXM1120 protocol and the elevator
  hardware
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8

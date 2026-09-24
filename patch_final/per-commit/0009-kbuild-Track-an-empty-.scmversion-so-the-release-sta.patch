@@ -1,7 +1,7 @@
 From 6e67f03cbbc1bdc2339bdfeeae018ff25bf428d4 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Sat, 12 Sep 2026 21:10:18 +0800
-Subject: [PATCH 09/71] kbuild: Track an empty .scmversion so the release stays
+Subject: [PATCH 09/73] kbuild: Track an empty .scmversion so the release stays
  4.14.190-perf
 
 This tree is a git repository, so scripts/setlocalversion appends "+" and the

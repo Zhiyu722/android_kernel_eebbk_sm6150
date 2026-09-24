@@ -1,7 +1,7 @@
 From e4aa5a9b18c48e0dd2061d9550bb59c113f66f66 Mon Sep 17 00:00:00 2001
 From: Zhiyu722 <Zhiyu722@users.noreply.github.com>
 Date: Fri, 18 Sep 2026 18:04:40 +0800
-Subject: [PATCH 50/71] ASoC: aw882xx: Build the ROM's amplifier register
+Subject: [PATCH 50/73] ASoC: aw882xx: Build the ROM's amplifier register
  tables into the image
 
 The amplifier profile has to come from the four tables the ROM ships in
